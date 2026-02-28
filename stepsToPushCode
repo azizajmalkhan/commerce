@@ -13,8 +13,13 @@ Step - 2 :  Create docker-compose.yml because we hav to rum all sevices at a tim
 
 Step - 3 : git add .
 Step - 4 : git commit -m "Initial commit"
-Step - 4 : git remote add origin https://github.com/your-username/commerceProject.
-step - 5 : git branch -M main or master
-step - 5 : git push -u origin main or master
+Step - 5 : git remote add origin https://github.com/your-username/commerceProject.
+step - 6 : git branch -M main or master
+step - 7 : git push -u origin main or master
 
+step - 8 : remove indentation erros in docker-compose.yml file after that do commit again push the code 
+//First hosting in VPS or some where , first we need to check in local is every thin working or not 
+step - 9 :  run docker-compose build in vs code in roo directory no in individual services
+//Lets  start th containers
+step - 10 : docker-compose up
 rabbit mq and  reid at (09ss:04)

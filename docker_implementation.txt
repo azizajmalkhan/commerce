@@ -1,0 +1,272 @@
+Good 👍
+I will give you **simple notes**. Save this.
+
+---
+
+# 📝 Docker Notes – When To Use Each Command
+
+---
+
+## ✅ 1️⃣ `docker-compose up`
+
+```bash
+docker-compose up
+```
+
+### Use this when:
+
+* You did NOT change code
+* You already built image before
+* You just want to start containers
+
+👉 Starts containers
+👉 Uses OLD image
+
+---
+
+## ✅ 2️⃣ `docker-compose up --build`
+
+```bash
+docker-compose up --build
+```
+
+### Use this when:
+
+* You changed code
+* You changed package.json
+* You changed Dockerfile
+* You changed .env
+* You commented or added code
+
+👉 Rebuild image
+👉 Then start container
+
+This is MOST IMPORTANT for you.
+
+---
+
+## ✅ 3️⃣ `docker-compose down`
+
+```bash
+docker-compose down
+```
+
+### Use this when:
+
+* You want to stop everything
+* You want clean restart
+* You are fixing errors
+
+👉 Stops containers
+👉 Removes containers
+
+---
+
+## ✅ 4️⃣ Full Clean Restart (Best Practice)
+
+When confused, run:
+
+```bash
+docker-compose down
+docker-compose up --build
+```
+
+This solves 90% problems 🔥
+
+---
+
+# 🎯 Simple Rule For You
+
+Whenever you change code:
+
+👉 Always run:
+
+```bash
+docker-compose up --build
+```
+
+Otherwise Docker runs old code.
+
+---
+
+# 🧠 Why This Happens?
+
+Docker copies your code inside image.
+
+If you don’t rebuild:
+
+👉 It does not see new changes.
+
+---
+
+# 🚀 Easy Memory Trick
+
+Changed code?
+→ Use `--build`
+
+No changes?
+→ Just `up`
+
+---
+
+You are learning real DevOps now 💪
+Very good progress.
+
+If you want, I can also give notes about:
+
+* docker-compose logs
+* docker ps
+* docker images
+* docker container debugging
+
+Just tell me 👍
+
+
+Good 👍 simple explanation.
+
+---
+
+# 🐳 What is `docker ps` ?
+
+```bash
+docker ps
+```
+
+👉 This command shows
+**which containers are running right now**
+
+That’s it.
+
+---
+
+# 🧠 Simple Meaning
+
+`ps` means:
+
+👉 “process status”
+
+So:
+
+```bash
+docker ps
+```
+
+means:
+
+👉 “Show running Docker containers”
+
+---
+
+# ✅ Example Output
+
+```bash
+CONTAINER ID   IMAGE          PORTS               NAMES
+a1b2c3d4       orders-app     0.0.0.0:3001->3001  orders-service-1
+b2c3d4e5       redis:7        0.0.0.0:6379->6379  redis-1
+```
+
+This tells:
+
+* Container name
+* Which image
+* Which port
+* Container ID
+
+---
+
+# 📌 Important Commands
+
+## 1️⃣ Show Running Containers
+
+```bash
+docker ps
+```
+
+Only running containers.
+
+---
+
+## 2️⃣ Show All Containers (Even Stopped)
+
+```bash
+docker ps -a
+```
+
+Shows:
+
+* Running
+* Stopped
+* Exited containers
+
+---
+
+## 3️⃣ Stop a Container
+
+```bash
+docker stop <container_name>
+```
+
+Example:
+
+```bash
+docker stop orders-service-1
+```
+
+---
+
+# 🎯 Why You Need `docker ps`
+
+When:
+
+* You get error
+* You want to check container is running
+* You want container name
+* You want container ID
+
+First run:
+
+```bash
+docker ps
+```
+
+---
+
+# 🚀 Simple Memory Trick
+
+`docker ps`
+= “What is running?”
+
+---
+
+Since you are using Docker Compose, after:
+
+```bash
+docker-compose up
+```
+
+You can open new terminal and run:
+
+```bash
+docker ps
+```
+
+To check if Redis and orders-service are running.
+
+---
+
+If you want, I can explain:
+
+* docker logs
+* docker exec
+* docker images
+* docker restart
+
+These are very important for backend developer 💪
+
+
+
+commands 
+    docker-compose logs orders-service 
+        |--It shows all logs of orders-service
+    docker-compose ps
+        | --It shows which container data running (services) are running

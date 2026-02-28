@@ -7,7 +7,7 @@ const { initSocket} = require("./src/socket/index");
 const {route}=  require("./src/routes/order_routes")
 // const {worker} = require("./src/utills/email_consumer")
 
-const {bullMqConsumer} = require("./src/utills/email_consumer")
+// const {bullMqConsumer} = require("./src/utills/email_consumer")
 
 
 require("dotenv").config()

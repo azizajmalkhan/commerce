@@ -1,7 +1,7 @@
 const { connectMongo } = require("../config/mongo");
 const mongoose = require("mongoose");
 const { Order } = require("../domain/order");
-const { orderQueue } = require("../queues/email.queue")
+// const { orderQueue } = require("../queues/email.queue")
 // const { getIO } = require('../socket/index')
 const axios = require("axios")
 async function orderService(payload) {
@@ -32,7 +32,7 @@ async function orderService(payload) {
     const response = order.toJSON()
 
     // Push to queue
-    let job = await orderQueue.add("order_created", response);
+    // let job = await orderQueue.add("order_created", response);
 
     return response
 
