@@ -37,7 +37,7 @@ async function orderService(payload) {
     return response
 
   } catch (error) {
-    return error.message
+     throw error;
   }
 
 }
