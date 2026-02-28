@@ -15,13 +15,15 @@ async function orderService(payload) {
     }
 
     // 1️⃣ Data fetching
-    products = await getProductsData(product_ids);
-    if (products) {
-      tax_category_ids = products.map((item) => item.product__tax_category_id)
-    }
-    let tax_details = await getTaxDetails(tax_category_ids)
+    // products = await getProductsData(product_ids);
+    // if (products) {
+    //   tax_category_ids = products.map((item) => item.product__tax_category_id)
+    // }
+    // let tax_details = await getTaxDetails(tax_category_ids)
 
     // 2️⃣ Business logic
+    products = []
+    tax_details = []
     order.addItems(products)
     order.addTaxDetails(tax_details)
     order.calculateSubTotal()
