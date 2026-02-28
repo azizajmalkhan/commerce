@@ -8,7 +8,8 @@ WORKDIR /use/src/app
 COPY package*.json ./  
 
 # Install dependencies  dev dependencies not install only advatage is its keep mdocker image smaller
-RUN npm ci --only=production
+#RUN npm ci --only=production
+RUN npm install
 
 # Copy all files
 COPY . .
@@ -18,3 +19,4 @@ EXPOSE 3002
 
 # Start app
 CMD ["node", "server.js"]
+
