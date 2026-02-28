@@ -14,7 +14,7 @@ const orderController = async (req, res) => {
     } catch (error) {
         res.json({
             "status": "error",
-            message: error?.message || "Internal Server Error"
+            message: error
         })
     }
 }
